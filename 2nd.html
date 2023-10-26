@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<style>
+  .option{
+    margin: 1%;
+  border-radius: 8px;
+  box-shadow: 0 0 3px 0px black;
+  display: flex;
+  justify-content: center;
+  }
+  .option:hover{
+    background-color: azure;
+cursor: pointer;
+  }
+  body {
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+  .question{
+    width: 90%;
+  }
+  #btn{
+  width: 30%;
+  background: #00c600;
+  border-radius: 8px;
+}
+.submit{
+  display: flex;
+  justify-content: center;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  margin: 7%;
+}
+input{
+  margin: 1%;
+}
+.top{
+  display: flex;
+  overflow: scroll;
+  
+}
+.image img{
+  width: 100%;
+}
+.student{
+  margin: 3%;
+}
+.value{
+  color: green;
+  font-weight: 600;
+}
+.value h3{
+  color: blue;
+  font-weight: 600;
+}
+
+</style>
+
+<body>
+  <div style="width: 100vw; display: flex;" class="home">
+    <img style="width: 100%; margin: 5% 0;" src="Frame 345.png" alt="">
+  </div>
+  <div class="question">
+    
+    <div class="note"><p style="font-size: 18px; color: red; font-weight: 600;">Note :- Now you can start your test you have only 15 minutes for complition of this test, after complete the test please fill your total attempt on the prompt box. Best of Luck.</p></div>
+
+    <!-- one  -->
+    <p>Q.1 <b>झारखंड में सर्वाधिक हेमाटाइट आयस्क वाला जिला कौन सा है?</b></p>
+    <div class="answer">
+      <div class="option" id="wrongOne" onclick="toggleOne()"><p>1. पूर्वी सिंहभूम</p></div>
+      <div class="option" id="wrongOneOne" onclick="toggleOneOne()"><p>2.लातेहार</p></div>
+      <div class="option" id="rightOne" onclick="sahiOne()"><p>3. पश्चिमी सिंहभूम</p></div>
+      <div class="option" id="wrongOneTwo" onclick="toggleOneTwo()"><p>4.पाकुड़</p></div>
+    </div><br><br>
+<!-- two  -->
+    <p><b>Q.2 झारखंड में कोयले की कितनी खदानें हैं?</b></p>
+    <div class="answer">
+      <div class="option" id="wrongTwo" onclick="toggleTwo()"><p>1. 294</p></div>
+      <div class="option" id="rightTwo" onclick="sahiTwo()"><p>2. 132</p></div>
+      <div class="option" id="wrongTwoOne" onclick="toggleTwoOne()"><p>3. 476</p></div>
+      <div class="option" id="wrongTwoThree" onclick="toggleTwoThree()"><p>4. 432</p></div>
+    </div><br><br>
+    <!-- three  -->
+
+    <p><b>Q.3 औरंगा जलशाय परियोजना की शुरुआत किस पंचवर्षीय योजना में हुई थी?</b> </p>
+    <div class="answer">
+      <div class="option" id="wrongThree" onclick="toggleThree()"><p>1.चौथी पंचवर्षीय योजना</p></div>
+      <div class="option" id="wrongThreeOne" onclick="toggleThreeOne()"><p>2. छठी पंचवर्षीय योजना</p></div>
+      <div class="option" id="rightThree" onclick="sahiThree()"><p>3. सातवीं पंचवर्षीय योजना</p></div>
+      <div class="option" id="wrongThreeThree" onclick="toggleThreeThree()"><p>4. 5th  पंचवर्षीय योजना</p></div>
+    </div><br><br>
+
+    <!-- Four  -->
+    <p><b>Q.4 ध|न सिंह टोली जलाशय परियोजना कहां स्थित है?</b></p>
+    <div class="answer">
+      <div class="option" id="rightFour" onclick="sahiFour()"><p>1. गुमला</p></div>
+      <div class="option" id="wrongFour" onclick="toggleFour()"><p>2. सिंहभूम</p></div>
+      <div class="option" id="wrongFourOne" onclick="toggleFourOne()"><p>3. रांची</p></div>
+      <div class="option" id="wrongFourTwo" onclick="toggleFourTwo()"><p>4. N.O.T</p></div>
+    </div><br><br>
+
+    <!-- Five  -->
+    <p><b>Q.5 दामोदर नदी को निम्न में से और किस नाम से जाना जाता है</b></p>
+    <div class="answer">
+      <div class="option" id="wrongFive" onclick="toggleFive()"><p>1. यमुना नदी</p></div>
+      <div class="option" id="wrongFiveOne" onclick="toggleFiveOne()"><p>2. वासुकी नदी</p></div>
+      <div class="option" id="wrongFiveTwo" onclick="toggleFiveTwo()"><p>3. त्सांगपो नदी</p></div>
+      <div class="option" id="rightFive" onclick="sahiFive()"><p>4. देव नदी</p></div>
+    </div><br><br>
+
+    <!-- six  -->
+    <p><b>Q.6 झारखंड में सबसे अधिक बारिश वाले स्थानो में निम्न में से कौन सी मिट्टी पाई जाती है?</b></p>
+    <div class="answer">
+      <div class="option" id="wrongSix" onclick="toggleSix()"><p>1. जलोध मिट्टी</p></div>
+      <div class="option" id="wrongSixOne" onclick="toggleSixOne()"><p>2. अभ्रक मूलक मिट्टी</p></div>
+      <div class="option" id="rightSix" onclick="sahiSix()"><p>3. लेटराइट मिट्टी</p></div>
+      <div class="option" id="wrongSixTwo" onclick="toggleSixTwo()"><p>4. रेतीली मिट्टी</p></div>
+    </div><br><br>
+
+    <!-- seven  -->
+    <p><b>Q.7 कुड़ुख क्या हैं?</b></p>
+    <div class="answer">
+      <div class="option" id="wrongSeven" onclick="toggleSeven()"><p>1. संथाल जनजाति की भाषा</p></div>
+      <div class="option" id="rightSeven" onclick="sahiSeven()"><p>2. उराँव जनजाति की भाषा</p></div>
+      <div class="option" id="wrongSevenOne" onclick="toggleSevenOne()"><p>3. आम तौर पर जंगलो में पाया जाने वाला फल</p></div>
+      <div class="option" id="wrongSevenTwo" onclick="toggleSevenTwo()"><p>4. इनमें से सभी</p></div>
+    </div><br><br>
+
+    <!-- eight  -->
+    <p><b>Q.8 झारखंड विभाजन के समय कितने जेले थे?</b></p>
+    <div class="answer">
+      <div class="option" id="wrongEight" onclick="toggleEight()"><p>1. 28</p></div>
+      <div class="option" id="wrongEightOne" onclick="toggleEightOne()"><p>2. 19</p></div>
+      <div class="option" id="rightEight" onclick="sahiEight()"><p>3. 18</p></div>
+      <div class="option" id="wrongEightTwo" onclick="toggleEightTwo()"><p>4. 21</p></div>
+    </div><br><br>
+
+     <!-- nine  -->
+     <p><b>Q.9 1206 ई. मैं कुतुबद्दीन एबक का कौन सा सिपाही ने दक्षिण बिहार पर हमला किया था?</b></p>
+     <div class="answer">
+       <div class="option" id="wrongNine" onclick="toggleNine()"><p>1.  यल्दूज</p></div>
+       <div class="option" id="wrongNineOne" onclick="toggleNineOne()"><p>2. छज्जू मलिक</p></div>
+       <div class="option" id="rightNine" onclick="sahiNine()"><p>3. बख्तियार खिलजी</p></div>
+       <div class="option" id="wrongNineTwo" onclick="toggleNineTwo()"><p>4. N.O.T</p></div>
+     </div><br><br>
+
+      <!-- ten  -->
+      <p><b>Q.10 पलामू में 1857 की क्रांति का नेतृत्व किसने किया था?</b></p>
+      <div class="answer">
+        <div class="option" id="wrongTen" onclick="toggleTen()"><p>1. अर्जुन सिंह</p></div>
+        <div class="option" id="wrongTenOne" onclick="toggleTenOne()"><p>2. धर्मपाल यादव</p></div>
+        <div class="option" id="rightTen" onclick="sahiTen()"><p>3. नीलांबर पीतांबर</p></div>
+        <div class="option" id="wrongTenTwo" onclick="toggleTenTwo()"><p>4. ठाकुर विश्वनाथ शाहदेव</p></div>
+      </div><br><br>
+
+      <!-- eleven  -->
+      <p><b>Q.11 म|लूटी मंदिर कहाँ स्थित है?</b></p>
+      <div class="answer">
+        <div class="option" id="wrongEleven" onclick="toggleEleven()"><p>1. गिरिडीह</p></div>
+        <div class="option" id="wrongElevenOne" onclick="toggleElevenOne()"><p>2. चतरा</p></div>
+        <div class="option" id="wrongElevenTwo" onclick="toggleElevenTwo()"><p>3. कोडरमा</p></div>
+        <div class="option" id="rightEleven" onclick="sahiEleven()"><p>4. दुमका</p></div>
+      </div><br><br>
+
+      <!-- twelve  -->
+      <p><b>Q.12 झारखण्ड गंगा नदी प्राधिकरण का गठन कब हुआ?</b></p>
+      <div class="answer">
+        <div class="option" id="wrongTwelve" onclick="toggleTwelve()"><p>1. 12 फरवरी 2009</p></div>
+        <div class="option" id="rightTwelve" onclick="sahiTwelve()"><p>2. 20 फरवरी 2009</p></div>
+        <div class="option" id="wrongTwelveOne" onclick="toggleTwelveOne()"><p>3. 18 फरवरी 2009</p></div>
+        <div class="option" id="wrongTwelveTwo" onclick="toggleTwelveTwo()"><p>4. 19 फरवरी 2009</p></div>
+      </div><br><br>
+      
+      <!-- thirteen  -->
+      <p><b>Q.13 पंचदश तंत्र पुस्तक के लेखक कौन हैं?</b></p>
+      <div class="answer">
+        <div class="option" id="rightThirteen" onclick="sahiThirteen()"><p>1. शिवचंद्र शर्मा</p></div>
+        <div class="option" id="wrongThirteen" onclick="toggleThirteen()"><p>2. रामचन्द्र वर्मा</p></div>
+        <div class="option" id="wrongThirteenOne" onclick="toggleThirteenOne()"><p>3. राधाकृष्ण</p></div>
+        <div class="option" id="wrongThirteenTwo" onclick="toggleThirteenTwo()"><p>4. N.O.T</p></div>
+      </div><br><br>
+
+      <!-- fourteen  -->
+      <p><b>Q.14  रांची का जगन्नाथ मंदिर किसने बनवाया था?</b></p>
+      <div class="answer">
+        <div class="option" id="wrongFourteen" onclick="toggleFourteen()"><p>1. दुर्जन शाह</p></div>
+        <div class="option" id="wrongFourteenOne" onclick="toggleFourteenOne()"><p>2. जगन्नाथ शाहदेव</p></div>
+        <div class="option" id="rightFourteen" onclick="sahiFourteen()"><p>3. ठाकुर एनी नाथ शाहदेव</p></div>
+        <div class="option" id="wrongFourteenTwo" onclick="toggleFourteenTwo()"><p>4. N.O.T</p></div>
+      </div><br><br>
+
+      <!-- fifteen  -->
+      <p><b>Q.15  छोटानागपुर उन्नति समाज की स्थापना कब हुई थी?</b></p>
+      <div class="answer">
+        <div class="option" id="wrongFifteen" onclick="toggleFifteen()"><p>1. 1879</p></div>
+        <div class="option" id="wrongFifteenOne" onclick="toggleFifteenOne()"><p>2. 1912</p></div>
+        <div class="option" id="wrongFifteenTwo" onclick="toggleFifteenTwo()"><p>3. 1917</p></div>
+        <div class="option" id="rightFifteen" onclick="sahiFifteen()"><p>4. 1915</p></div>
+      </div><br><br>
+
+      <!-- sixteen  -->
+      <p><b>Q.16 एम ओ एच फारुख से पहले झारखंड का राज्यपाल कौन था?</b></p>
+      <div class="answer">
+        <div class="option" id="wrongSixteen" onclick="toggleSixteen()"><p>1.  सय्यद सिब्ते राजी</p></div>
+        <div class="option" id="rightSixteen" onclick="sahiSixteen()"><p>2. शंकर नारायण</p></div>
+        <div class="option" id="wrongSixteenOne" onclick="toggleSixteenOne()"><p>3. सय्यद अहमद</p></div>
+        <div class="option" id="wrongSixteenTwo" onclick="toggleSixteenTwo()"><p>4. एम रामा जोदस</p></div>
+      </div><br><br>
+
+      <!-- seventeen  -->
+      <p><b>Q.17 झारखण्ड में विधानसभा की सीटें कितनी हैं?</b></p>
+      <div class="answer">
+        <div class="option" id="wrongSeventeen" onclick="toggleSeventeen()"><p>1. 72</p></div>
+        <div class="option" id="wrongSeventeenOne" onclick="toggleSeventeenOne()"><p>2. 86</p></div>
+        <div class="option" id="rightSeventeen" onclick="sahiSeventeen()"><p>3. 82</p></div>
+        <div class="option" id="wrongSeventeenTwo" onclick="toggleSeventeenTwo()"><p>4. 83</p></div>
+      </div><br><br>
+
+      <!-- eighteen -->
+      <p><b>Q.18 बोकारो लौह इस्पात कंपनी को किस देश के सहयोग से बनाया गया था?</b></p>
+      <div class="answer">
+        <div class="option" id="wrongEighteen" onclick="toggleEighteen()"><p>1. U.S.A</p></div>
+        <div class="option" id="wrongEighteenOne" onclick="toggleEighteenOne()"><p>2. जापान</p></div>
+        <div class="option" id="wrongEighteenTwo" onclick="toggleEighteenTwo()"><p>3. कनाडा</p></div>
+        <div class="option" id="rightEighteen" onclick="sahiEighteen()"><p>4. सोवियत संघ</p></div>
+      </div><br><br>
+
+      <!-- nineteen -->
+      <p><b>Q.19 रोहिणी पर्व कब मनाया जाता है?</b></p>
+      <div class="answer">
+        <div class="option" id="wrongNineteen" onclick="toggleNineteen()"><p>1. फसल काटने के समय</p></div>
+        <div class="option" id="wrongNineteenOne" onclick="toggleNineteenOne()"><p>2. फसल अच्छी पैदावर के समय</p></div>
+        <div class="option" id="rightNineteen" onclick="sahiNineteen()"><p>3. खेत में बीज बोने के समय</p></div>
+        <div class="option" id="wrongNineteenTwo" onclick="toggleNineteenTwo()"><p>4. N.O.T </p></div>
+      </div><br><br>
+
+      <!-- Twenty -->
+      <p><b>Q.20 कीर्तनिया लोकनृत्य कौन से भगवान को प्रदर्शित किया जाता है</b></p>
+      <div class="answer">
+        <div class="option" id="rightTwenty" onclick="sahiTwenty()"><p>1. श्री कृष्ण</p></div>
+        <div class="option" id="wrongTwenty" onclick="toggleTwenty()"><p>2. भगवान शंकर</p></div>
+        <div class="option" id="wrongTwentyOne" onclick="toggleTwentyOne()"><p>3. श्री राम</p></div>
+        <div class="option" id="wrongTwentyTwo" onclick="toggleTwentyTwo()"><p>4. श्री गणेश</p></div>
+      </div><br><br>
+
+      <!-- Twentyone -->
+      <p><b>Q.21  इनमें से कौन सी एक जायद फ़सल है</b></p>
+      <div class="answer">
+        <div class="option" id="wrongTwentyO" onclick="toggleTwentyO()"><p>1. ज्वार</p></div>
+        <div class="option" id="wrongTwentyOOne" onclick="toggleTwentyOOne()"><p>2. आलू</p></div>
+        <div class="option" id="wrongTwentyOTwo" onclick="toggleTwentyOTwo()"><p>3. अदरक</p></div>
+        <div class="option" id="rightTwentyO" onclick="sahiTwentyO()"><p>4. महुआ</p></div>
+      </div><br><br>
+
+      <!-- Twentytwo -->
+      <p><b>Q.22 दामोदर घाटी परियोजना का मुख्यालय कहा स्थित है?</b></p>
+      <div class="answer">
+        <div class="option" id="wrongTwentyT" onclick="toggleTwentyT()"><p>1. रांची</p></div>
+        <div class="option" id="wrongTwentyTOne" onclick="toggleTwentyTOne()"><p>2. धनबाद</p></div>
+        <div class="option" id="rightTwentyT" onclick="sahiTwentyT()"><p>3. कोलकाता</p></div>
+        <div class="option" id="wrongTwentyTTwo" onclick="toggleTwentyTTwo()"><p>4. भुवनेश्‍वर</p></div>
+      </div><br><br>
+
+      <!-- Twentythree -->
+      <p><b>Q.23 झारखंड का सबसे ऊंचा जलप्रपात कौन सा है?</b></p>
+      <div class="answer">
+        <div class="option" id="wrongTwentyTh" onclick="toggleTwentyTh()"><p>1. सदनीघाघ जलप्रपात</p></div>
+        <div class="option" id="wrongTwentyThOne" onclick="toggleTwentyThOne()"><p>2. बोकारो जलप्रपात</p></div>
+        <div class="option" id="rightTwentyTh" onclick="sahiTwentyTh()"><p>3. बुढाघाघ जलप्रपात</p></div>
+        <div class="option" id="wrongTwentyThTwo" onclick="toggleTwentyThTwo()"><p>4.  दशम जलप्रपात</p></div>
+      </div><br><br>
+
+      <!-- Twentyfour -->
+      <p><b>Q.24 जैनियों के 23 वे तीर्थकर पाश्र्वनाथ का निर्वाण कितने ईश्वी पूर्व गिरिडीह के पारसनाथ पहाड़ी पर हुआ था?</b></p>
+      <div class="answer">
+        <div class="option" id="wrongTwentyF" onclick="toggleTwentyF()"><p>1. 740 ईश्वी पूर्व </p></div>
+        <div class="option" id="wrongTwentyFOne" onclick="toggleTwentyFOne()"><p>2. 720 ईश्वी पूर्व</p></div>
+        <div class="option" id="rightTwentyF" onclick="sahiTwentyF()"><p>3. 717 ईश्वी पूर्व</p></div>
+        <div class="option" id="wrongTwentyFTwo" onclick="toggleTwentyFTwo()"><p>4. 719 ईश्वी पूर्व</p></div>
+      </div><br><br>
+
+      <!-- Twentyfive -->
+      <p><b>Q.25 जुबली पार्क झारखंड के किस जिले में स्थित है?</b></p>
+      <div class="answer">
+        <div class="option" id="rightTwentyFi" onclick="sahiTwentyFi()"><p>1. जमशेदपुर</p></div>
+        <div class="option" id="wrongTwentyFi" onclick="toggleTwentyFi()"><p>2. बोकारो</p></div>
+        <div class="option" id="wrongTwentyFiOne" onclick="toggleTwentyFiOne()"><p>3. रांची</p></div>
+        <div class="option" id="wrongTwentyFiTwo" onclick="toggleTwentyFiTwo()"><p>4. चतरा</p></div>
+      </div><br><br>
+      
+      <div class="submit"><button onclick="submit()" id="btn">submit</button></div>
+
+      <div class="fill">
+        <form>
+          <input type="text" placeholder="write your name here!">
+          <input type="number" placeholder="type here your total write answer">
+          <input type="number" placeholder="type here your total wrong answer">
+          <input type="number" placeholder="type here your total attampt">
+          <input type="week" placeholder="do you want to say something" style="height: 15vh;">
+          <input type="submit" placeholder="submit">
+        </form>
+      </div>
+      <div class="top"><h1>Today's Rank</h1></div>
+      <div class="top">
+            <div class="student">
+              <div class="image"><img src="user.png" alt=""></div>
+              <div class="value"><h3>Manish kumar</h3><br>Rank : 01</div>
+            </div>
+            <div class="student">
+              <div class="image"><img src="user.png" alt=""></div>
+              <div class="value"><h3>Rank : 02</h3><br>Jyoti shaha</div>
+            </div>
+            <div class="student">
+              <div class="image"><img src="user.png" alt=""></div>
+              <div class="value"><h3>Rank : 03</h3><br>VIkram tomar</div>
+            </div>
+            <div class="student">
+              <div class="image"><img src="user.png" alt=""></div>
+              <div class="value"><h3>Rank : 04</h3><br>vinita tudu</div>
+            </div>
+            <div class="student">
+              <div class="image"><img src="user.png" alt=""></div>
+              <div class="value"><h3>Rank : 05</h3><br>Neha mourya</div>
+            </div>
+            <div class="student">
+              <div class="image"><img src="user.png" alt=""></div>
+              <div class="value"><h3>Rank : 06</h3><br>Abhishek kumar</div>
+            </div>
+            <div class="student">
+              <div class="image"><img src="user.png" alt=""></div>
+              <div class="value"><h3>Rank : 07</h3><br>Kapil dev yadav</div>
+            </div>
+            <div class="student">
+              <div class="image"><img src="user.png" alt=""></div>
+              <div class="value"><h3>Rank : 08</h3><br>Benzamin ekka</div>
+            </div>
+            <div class="student">
+              <div class="image"><img src="user.png" alt=""></div>
+              <div class="value"><h3>Rank : 09</h3><br>Sunil</div>
+            </div>
+            <div class="student">
+              <div class="image"><img src="user.png" alt=""></div>
+              <div class="value"><h3>Rank : 10</h3><br>Manish Kumar</div>
+            </div>
+      </div>
+  </div>
+
+  
+
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.all.min.js"></script>
+  <script>
+    function submit(){
+      Swal.fire(
+  'Good job!',
+  'You have completed the test we will acknowledge your report on the top 10 section please checkout',
+  'success'
+)
+    }
+    //first question
+    function toggleOne(){
+      alert("You have choosed wrong option please try again")
+      wrongOne.style.backgroundColor = 'red';
+    }
+    function toggleOneOne(){
+      alert("You have choosed wrong option please try again")
+      wrongOneOne.style.backgroundColor = 'red';
+    }
+    function toggleOneTwo(){
+      alert("You have choosed wrong option please try again")
+      wrongOneTwo.style.backgroundColor = 'red';
+    }
+    function sahiOne(){
+      rightOne.style.backgroundColor = 'green'
+    }
+
+    //second question
+    function toggleTwo(){
+      alert("You have choosed wrong option please try again")
+      wrongTwo.style.backgroundColor = 'red';
+    }
+    function toggleTwoOne(){
+      alert("You have choosed wrong option please try again")
+      wrongTwoOne.style.backgroundColor = 'red';
+    }
+    function toggleTwoThree(){
+      alert("You have choosed wrong option please try again")
+      wrongTwoThree.style.backgroundColor = 'red';
+    }
+    function sahiTwo(){
+      rightTwo.style.backgroundColor = 'green'
+    }
+    //three question
+
+    function toggleThree(){
+      alert("You have choosed wrong option please try again")
+      wrongThree.style.backgroundColor = 'red';
+    }
+    function toggleThreeOne(){
+      alert("You have choosed wrong option please try again")
+      wrongThreeOne.style.backgroundColor = 'red';
+    }
+    function toggleThreeThree(){
+      alert("You have choosed wrong option please try again")
+      wrongThreeThree.style.backgroundColor = 'red';
+    }
+    function sahiThree(){
+      rightThree.style.backgroundColor = 'green'
+    }
+
+    //four question
+    function toggleFour(){
+      alert("You have choosed wrong option please try again")
+      wrongFour.style.backgroundColor = 'red';
+    }
+    function toggleFourOne(){
+      alert("You have choosed wrong option please try again")
+      wrongFourOne.style.backgroundColor = 'red';
+    }
+    function toggleFourTwo(){
+      alert("You have choosed wrong option please try again")
+      wrongFourTwo.style.backgroundColor = 'red';
+    }
+    function sahiFour(){
+      rightFour.style.backgroundColor = 'green'
+    }
+
+    //five question
+    function toggleFive(){
+      alert("You have choosed wrong option please try again")
+      wrongFive.style.backgroundColor = 'red';
+    }
+    function toggleFiveOne(){
+      alert("You have choosed wrong option please try again")
+      wrongFiveOne.style.backgroundColor = 'red';
+    }
+    function toggleFiveTwo(){
+      alert("You have choosed wrong option please try again")
+      wrongFiveTwo.style.backgroundColor = 'red';
+    }
+    function sahiFive(){
+      rightFive.style.backgroundColor = 'green'
+    }
+
+    //six question
+    function toggleSix(){
+      alert("You have choosed wrong option please try again")
+      wrongSix.style.backgroundColor = 'red';
+    }
+    function toggleSixOne(){
+      alert("You have choosed wrong option please try again")
+      wrongSixOne.style.backgroundColor = 'red';
+    }
+    function toggleSixTwo(){
+      alert("You have choosed wrong option please try again")
+      wrongSixTwo.style.backgroundColor = 'red';
+    }
+    function sahiSix(){
+      rightSix.style.backgroundColor = 'green'
+    }
+
+    //seven question
+    function toggleSeven(){
+      alert("You have choosed wrong option please try again")
+      wrongSeven.style.backgroundColor = 'red';
+    }
+    function toggleSevenOne(){
+      alert("You have choosed wrong option please try again")
+      wrongSevenOne.style.backgroundColor = 'red';
+    }
+    function toggleSevenTwo(){
+      alert("You have choosed wrong option please try again")
+      wrongSevenTwo.style.backgroundColor = 'red';
+    }
+    function sahiSeven(){
+      rightSeven.style.backgroundColor = 'green'
+    }
+
+     //eight question
+     function toggleEight(){
+      alert("You have choosed wrong option please try again")
+      wrongEight.style.backgroundColor = 'red';
+    }
+    function toggleEightOne(){
+      alert("You have choosed wrong option please try again")
+      wrongEightOne.style.backgroundColor = 'red';
+    }
+    function toggleEightTwo(){
+      alert("You have choosed wrong option please try again")
+      wrongEightTwo.style.backgroundColor = 'red';
+    }
+    function sahiEight(){
+      rightEight.style.backgroundColor = 'green'
+    }
+
+    //Nine question
+    function toggleNine(){
+      alert("You have choosed wrong option please try again")
+      wrongNine.style.backgroundColor = 'red';
+    }
+    function toggleNineOne(){
+      alert("You have choosed wrong option please try again")
+      wrongNineOne.style.backgroundColor = 'red';
+    }
+    function toggleNineTwo(){
+      alert("You have choosed wrong option please try again")
+      wrongNineTwo.style.backgroundColor = 'red';
+    }
+    function sahiNine(){
+      rightNine.style.backgroundColor = 'green'
+    }
+
+    //tem question
+    function toggleTen(){
+      alert("You have choosed wrong option please try again")
+      wrongTen.style.backgroundColor = 'red';
+    }
+    function toggleTenOne(){
+      alert("You have choosed wrong option please try again")
+      wrongTenOne.style.backgroundColor = 'red';
+    }
+    function toggleTenTwo(){
+      alert("You have choosed wrong option please try again")
+      wrongTenTwo.style.backgroundColor = 'red';
+    }
+    function sahiTen(){
+      rightTen.style.backgroundColor = 'green'
+    }
+
+     //eleven question
+     function toggleEleven(){
+      alert("You have choosed wrong option please try again")
+      wrongEleven.style.backgroundColor = 'red';
+    }
+    function toggleElevenOne(){
+      alert("You have choosed wrong option please try again")
+      wrongElevenOne.style.backgroundColor = 'red';
+    }
+    function toggleElevenTwo(){
+      alert("You have choosed wrong option please try again")
+      wrongElevenTwo.style.backgroundColor = 'red';
+    }
+    function sahiEleven(){
+      rightEleven.style.backgroundColor = 'green'
+    }
+
+     //twelve question
+     function toggleTwelve(){
+      alert("You have choosed wrong option please try again")
+      wrongTwelve.style.backgroundColor = 'red';
+    }
+    function toggleTwelveOne(){
+      alert("You have choosed wrong option please try again")
+      wrongTwelveOne.style.backgroundColor = 'red';
+    }
+    function toggleTwelveTwo(){
+      alert("You have choosed wrong option please try again")
+      wrongTwelveTwo.style.backgroundColor = 'red';
+    }
+    function sahiTwelve(){
+      rightTwelve.style.backgroundColor = 'green'
+    }
+
+     //thirteen question
+     function toggleThirteen(){
+      alert("You have choosed wrong option please try again")
+      wrongThirteen.style.backgroundColor = 'red';
+    }
+    function toggleThirteenOne(){
+      alert("You have choosed wrong option please try again")
+      wrongThirteenOne.style.backgroundColor = 'red';
+    }
+    function toggleThirteenTwo(){
+      alert("You have choosed wrong option please try again")
+      wrongThirteenTwo.style.backgroundColor = 'red';
+    }
+    function sahiThirteen(){
+      rightThirteen.style.backgroundColor = 'green'
+    }
+
+    //fourteen question
+    function toggleFourteen(){
+      alert("You have choosed wrong option please try again")
+      wrongFourteen.style.backgroundColor = 'red';
+    }
+    function toggleFourteenOne(){
+      alert("You have choosed wrong option please try again")
+      wrongFourteenOne.style.backgroundColor = 'red';
+    }
+    function toggleFourteenTwo(){
+      alert("You have choosed wrong option please try again")
+      wrongFourteenTwo.style.backgroundColor = 'red';
+    }
+    function sahiFourteen(){
+      rightFourteen.style.backgroundColor = 'green'
+    }
+
+    //fifteen question
+    function toggleFifteen(){
+      alert("You have choosed wrong option please try again")
+      wrongFifteen.style.backgroundColor = 'red';
+    }
+    function toggleFifteenOne(){
+      alert("You have choosed wrong option please try again")
+      wrongFifteenOne.style.backgroundColor = 'red';
+    }
+    function toggleFifteenTwo(){
+      alert("You have choosed wrong option please try again")
+      wrongFifteenTwo.style.backgroundColor = 'red';
+    }
+    function sahiFifteen(){
+      rightFifteen.style.backgroundColor = 'green'
+    }
+
+    //sixteen question
+    function toggleSixteen(){
+      alert("You have choosed wrong option please try again")
+      wrongSixteen.style.backgroundColor = 'red';
+    }
+    function toggleSixteenOne(){
+      alert("You have choosed wrong option please try again")
+      wrongSixteenOne.style.backgroundColor = 'red';
+    }
+    function toggleSixteenTwo(){
+      alert("You have choosed wrong option please try again")
+      wrongSixteenTwo.style.backgroundColor = 'red';
+    }
+    function sahiSixteen(){
+      rightSixteen.style.backgroundColor = 'green'
+    }
+
+    //seventeen question
+    function toggleSeventeen(){
+      alert("You have choosed wrong option please try again")
+      wrongSeventeen.style.backgroundColor = 'red';
+    }
+    function toggleSeventeenOne(){
+      alert("You have choosed wrong option please try again")
+      wrongSeventeenOne.style.backgroundColor = 'red';
+    }
+    function toggleSeventeenTwo(){
+      alert("You have choosed wrong option please try again")
+      wrongSeventeenTwo.style.backgroundColor = 'red';
+    }
+    function sahiSeventeen(){
+      rightSeventeen.style.backgroundColor = 'green'
+    }
+
+    //eighteen question
+    function toggleEighteen(){
+      alert("You have choosed wrong option please try again")
+      wrongEighteen.style.backgroundColor = 'red';
+    }
+    function toggleEighteenOne(){
+      alert("You have choosed wrong option please try again")
+      wrongEighteenOne.style.backgroundColor = 'red';
+    }
+    function toggleEighteenTwo(){
+      alert("You have choosed wrong option please try again")
+      wrongEighteenTwo.style.backgroundColor = 'red';
+    }
+    function sahiEighteen(){
+      rightEighteen.style.backgroundColor = 'green'
+    }
+
+    //nineteen question
+    function toggleNineteen(){
+      alert("You have choosed wrong option please try again")
+      wrongNineteen.style.backgroundColor = 'red';
+    }
+    function toggleNineteenOne(){
+      alert("You have choosed wrong option please try again")
+      wrongNineteenOne.style.backgroundColor = 'red';
+    }
+    function toggleNineteenTwo(){
+      alert("You have choosed wrong option please try again")
+      wrongNineteenTwo.style.backgroundColor = 'red';
+    }
+    function sahiNineteen(){
+      rightNineteen.style.backgroundColor = 'green'
+    }
+
+     //twenty question
+     function toggleTwenty(){
+      alert("You have choosed wrong option please try again")
+      wrongTwenty.style.backgroundColor = 'red';
+    }
+    function toggleTwentyOne(){
+      alert("You have choosed wrong option please try again")
+      wrongTwentyOne.style.backgroundColor = 'red';
+    }
+    function toggleTwentyTwo(){
+      alert("You have choosed wrong option please try again")
+      wrongTwentyTwo.style.backgroundColor = 'red';
+    }
+    function sahiTwenty(){
+      rightTwenty.style.backgroundColor = 'green'
+    }
+
+    //twentyOne question
+    function toggleTwentyO(){
+      alert("You have choosed wrong option please try again")
+      wrongTwentyO.style.backgroundColor = 'red';
+    }
+    function toggleTwentyOOne(){
+      alert("You have choosed wrong option please try again")
+      wrongTwentyOOne.style.backgroundColor = 'red';
+    }
+    function toggleTwentyOTwo(){
+      alert("You have choosed wrong option please try again")
+      wrongTwentyOTwo.style.backgroundColor = 'red';
+    }
+    function sahiTwentyO(){
+      rightTwentyO.style.backgroundColor = 'green'
+    }
+
+    //twentytwo question
+    function toggleTwentyT(){
+      alert("You have choosed wrong option please try again")
+      wrongTwentyT.style.backgroundColor = 'red';
+    }
+    function toggleTwentyTOne(){
+      alert("You have choosed wrong option please try again")
+      wrongTwentyTOne.style.backgroundColor = 'red';
+    }
+    function toggleTwentyTTwo(){
+      alert("You have choosed wrong option please try again")
+      wrongTwentyTTwo.style.backgroundColor = 'red';
+    }
+    function sahiTwentyT(){
+      rightTwentyT.style.backgroundColor = 'green'
+    }
+
+    //twentythree question
+    function toggleTwentyTh(){
+      alert("You have choosed wrong option please try again")
+      wrongTwentyTh.style.backgroundColor = 'red';
+    }
+    function toggleTwentyThOne(){
+      alert("You have choosed wrong option please try again")
+      wrongTwentyThOne.style.backgroundColor = 'red';
+    }
+    function toggleTwentyThTwo(){
+      alert("You have choosed wrong option please try again")
+      wrongTwentyThTwo.style.backgroundColor = 'red';
+    }
+    function sahiTwentyTh(){
+      rightTwentyTh.style.backgroundColor = 'green'
+    }
+
+  //twentyFour question
+  function toggleTwentyF(){
+      alert("You have choosed wrong option please try again")
+      wrongTwentyF.style.backgroundColor = 'red';
+    }
+    function toggleTwentyFOne(){
+      alert("You have choosed wrong option please try again")
+      wrongTwentyFOne.style.backgroundColor = 'red';
+    }
+    function toggleTwentyFTwo(){
+      alert("You have choosed wrong option please try again")
+      wrongTwentyFTwo.style.backgroundColor = 'red';
+    }
+    function sahiTwentyF(){
+      rightTwentyF.style.backgroundColor = 'green'
+    }
+
+    //twentyfive question
+    function toggleTwentyFi(){
+      alert("You have choosed wrong option please try again")
+      wrongTwentyFi.style.backgroundColor = 'red';
+    }
+    function toggleTwentyFiOne(){
+      alert("You have choosed wrong option please try again")
+      wrongTwentyFiOne.style.backgroundColor = 'red';
+    }
+    function toggleTwentyFiTwo(){
+      alert("You have choosed wrong option please try again")
+      wrongTwentyFiTwo.style.backgroundColor = 'red';
+    }
+    function sahiTwentyFi(){
+      rightTwentyFi.style.backgroundColor = 'green'
+    }
+  </script>
+
+</body>
+
+</html>
